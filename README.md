@@ -1,3 +1,3 @@
 # AmazeSpace
 Our major project implemented in MEAN stack.
-Expected completion duration - 50 days
+Expected completion duration - 45 days
