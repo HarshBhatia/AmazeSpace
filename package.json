@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/HarshBhatia/AmazeSpace/issues"
   },
-  "homepage": "https://github.com/HarshBhatia/AmazeSpace#readme"
+  "homepage": "https://github.com/HarshBhatia/AmazeSpace#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
