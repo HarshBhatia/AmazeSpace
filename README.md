@@ -18,3 +18,5 @@ I removed node_modules run this two commands
 to install node_modules locally :D
 
 an0nh4x0r added this line
+
+added github integration to slack!
