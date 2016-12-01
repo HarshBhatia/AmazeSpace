@@ -1,10 +1,15 @@
-var express = require('express')
-var app = express()
+var express = require('express'),
+    mongoose = require('mongoose'),
+    bodyParser = require('body-parser'),
+    api = require('./routes/api'),
+    Post = require('./schemas/post_schema');
 
-app.get('/', function (req, res) {
-  res.send('Welcome to AmazeSpace')
-})
+var app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+app.use('/api', api)
+
+app.listen(3000, function() {
+    console.log('Example app listening on port 3000!')
 })
