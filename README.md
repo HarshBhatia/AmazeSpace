@@ -19,4 +19,4 @@ to install node_modules locally :D
 
 an0nh4x0r added this line
 
-added github integration to slack!
+added github integration to slack again!
