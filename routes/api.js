@@ -75,7 +75,7 @@ router.route('/posts/:post_id')
                 res.send(err);
 
             res.json({ message: 'Successfully deleted' });
-        })
+        });
     })
 
 
