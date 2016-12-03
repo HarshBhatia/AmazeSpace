@@ -3,7 +3,16 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     api = require('./routes/api'),
     Post = require('./schemas/post_schema'),
-    path = require("path");
+    path = require("path"),
+    spdy = require('spdy'),
+    fs = require('fs');
+
+const port = 3000;
+
+var options = {
+    key: fs.readFileSync(__dirname + '/server.key'),
+    cert: fs.readFileSync(__dirname + '/server.crt'),
+};
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,7 +24,13 @@ app.get('/post_editor', function(req, res) {
     res.sendFile(path.join(__dirname + '/templates/index.html'));
 });
 
-
-app.listen(3000, function() {
-    console.log('Example app listening on port 3000!')
-})
+spdy
+    .createServer(options, app)
+    .listen(port, (error) => {
+        if (error) {
+            console.error(error)
+            return process.exit(1)
+        } else {
+            console.log('Listening on port: ' + port + '.')
+        }
+    })
